@@ -44,9 +44,9 @@ class FlickrAPI: API {
 
             switch endpoint {
             case .search(query: let query):
-                components?.queryItems = [
+                components?.queryItems?.append(contentsOf: [
                     .init(name: "text", value: query)
-                ]
+                ])
             default: break
             }
 
