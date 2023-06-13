@@ -13,21 +13,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      # - name: Setup Ruby
-      #   uses: ruby/setup-ruby@v1
-      #   with:
-      #     bundler-cache: true
       - run: | 
           xcodebuild \
             -project FlickrFindr.xcodeproj \
             -scheme FlickrFindr \
             -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.2' \
-            -derivedDataPath ./derivedData \
             test
       - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
-        with:
-          directory: ./derivedData/Logs/Test,
+        run: bash <(curl -s https://codecov.io/bash) -J FlickrFindr -xs
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
   
