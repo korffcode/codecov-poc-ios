@@ -1,4 +1,4 @@
-struct PhotoDTO: Codable {
+public struct PhotoDTO: Codable {
     let id: String?
     let owner: String?
     let secret: String?

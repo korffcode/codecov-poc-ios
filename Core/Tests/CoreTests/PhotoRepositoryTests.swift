@@ -1,5 +1,5 @@
 import XCTest
-@testable import FlickrFindr
+@testable import Core
 
 final class PhotoRepositoryTests: XCTestCase {
     var sut: PhotoRepository!

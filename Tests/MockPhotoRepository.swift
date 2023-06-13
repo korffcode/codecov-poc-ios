@@ -1,3 +1,5 @@
+@testable import Core
+
 class MockPhotoRepository: PhotoRepositoryProtocol {
     static var getRecentPhotosCalled: (() -> Void)?
     static var getPhotosCalled: ((String) -> Void)?

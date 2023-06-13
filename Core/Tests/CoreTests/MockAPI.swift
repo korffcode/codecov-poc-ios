@@ -1,4 +1,5 @@
 import Foundation
+@testable import Core
 
 class MockAPI: API {
     var mockResponseJsonString = """

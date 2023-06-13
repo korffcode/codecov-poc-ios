@@ -1,11 +1,11 @@
 import Foundation
 
-protocol API {
+public protocol API {
     func fetchPhotos(_ query: String) async throws -> [PhotoDTO]
     func fetchRecentPhotos() async throws -> [PhotoDTO]
 }
 
-class FlickrAPI: API {
+public class FlickrAPI: API {
     enum APIError: Error, LocalizedError {
         case failure(message: String)
 
@@ -56,11 +56,11 @@ class FlickrAPI: API {
     
     private let session: URLSession
 
-    init(session: URLSession = .shared) {
+    public init(session: URLSession = .shared) {
         self.session = session
     }
 
-    func fetchPhotos(_ query: String) async throws -> [PhotoDTO] {
+    public func fetchPhotos(_ query: String) async throws -> [PhotoDTO] {
         guard let url = Endpoint.builder(.search(query: query)) else {
             return []
         }
@@ -70,7 +70,7 @@ class FlickrAPI: API {
         return apiResponseDto.photos?.photo ?? []
     }
 
-    func fetchRecentPhotos() async throws -> [PhotoDTO] {
+    public func fetchRecentPhotos() async throws -> [PhotoDTO] {
         guard let url = Endpoint.builder(.getRecent) else {
             return []
         }

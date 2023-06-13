@@ -31,13 +31,24 @@
       <Testables>
          <TestableReference
             skipped = "NO"
-            parallelizable = "YES">
+            testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "153C22D529A4F387008FFB32"
                BuildableName = "FlickrFindrTests.xctest"
                BlueprintName = "FlickrFindrTests"
                ReferencedContainer = "container:FlickrFindr.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CoreTests"
+               BuildableName = "CoreTests"
+               BlueprintName = "CoreTests"
+               ReferencedContainer = "container:Core">
             </BuildableReference>
          </TestableReference>
       </Testables>
