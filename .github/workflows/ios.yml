@@ -20,7 +20,10 @@ jobs:
             -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.2' \
             test
       - name: Upload coverage reports to Codecov
-        run: bash <(curl -s https://codecov.io/bash) -J FlickrFindr -xs
+        uses: codecov/codecov-action@v3
+        with:
+          swift: true
+          functionalities: fixes
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
   
