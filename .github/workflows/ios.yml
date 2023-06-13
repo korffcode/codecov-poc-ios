@@ -24,7 +24,7 @@ jobs:
         with:
           swift: true
           functionalities: fixes
-          files: !./Tests,!./Core/Tests
+          files: '!./Tests,!./Core/Tests'
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
   
