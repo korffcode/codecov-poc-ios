@@ -14,12 +14,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
-      - name: Run Tests
-        run: bundle exec fastlane test
+      # - name: Setup Ruby
+      #   uses: ruby/setup-ruby@v1
+      #   with:
+      #     bundler-cache: true
+      - run: | 
+          xcodebuild \
+            -project FlickrFindr.xcodeproj \
+            -scheme FlickrFindr \
+            -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.2' \
+            test
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         env:
