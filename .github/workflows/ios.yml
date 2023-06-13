@@ -23,9 +23,12 @@ jobs:
             -project FlickrFindr.xcodeproj \
             -scheme FlickrFindr \
             -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.2' \
+            -derivedDataPath ./derivedData \
             test
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
+        with:
+          files: ./derivedData/Logs/Test/*,
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
   
