@@ -1,6 +1,22 @@
-# ignore:
-#   - "Tests"
-#   - "Core/Tests"
+component_management:
+  default_rules:
+    statuses:
+      - type: project
+        target: auto
+  individual_components:
+    - component_id: module_core
+      name: Core
+      paths:
+        - "Core/**"
+      statuses:           # the core component has its own statuses
+        - type: project
+          target: 90%
+          threshold: 5%
+        - type: patch
+    - component_id: module_app
+      name: Main App
+      paths:
+        - "FlickrFindr/**"
 coverage:
   status:
     project:
@@ -22,3 +38,5 @@ coverage:
       default:
         target: 60%
         threshold: 20%
+comment:
+  layout: "header, diff, flags, components"
