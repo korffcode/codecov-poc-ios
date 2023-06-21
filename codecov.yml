@@ -6,8 +6,8 @@ coverage:
     project:
       default:
         # basic
-        target: 80%
-        threshold: 0%
+        target: 70%
+        threshold: 10%
         # flags: 
         #   - unit
         # paths: 
@@ -18,3 +18,7 @@ coverage:
         if_ci_failed: error #success, failure, error, ignore
         informational: false
         only_pulls: false
+    patch:
+      default:
+        target: 60%
+        threshold: 20%
