@@ -1,6 +1,6 @@
-ignore:
-  - "Tests"
-  - "Core/Tests"
+# ignore:
+#   - "Tests"
+#   - "Core/Tests"
 coverage:
   status:
     project:
