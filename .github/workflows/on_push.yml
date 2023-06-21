@@ -1,4 +1,4 @@
-name: iOS starter workflow
+name: on_push.yml
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Build and Test default scheme using any available iPhone simulator
+    name: Test & Upload Coverage Report
     runs-on: macos-latest
 
     steps:
@@ -23,6 +23,7 @@ jobs:
         uses: codecov/codecov-action@v3
         with:
           swift: true
+          swift_project: FlickrFindr
           functionalities: fixes
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
