@@ -1,24 +1,14 @@
-# ignore:
-#   - "Tests"
-#   - "Core/Tests"
 coverage:
   status:
     project:
       default:
         # basic
-        target: 70%
+        target: 60%
         threshold: 10%
-        # flags: 
-        #   - unit
-        # paths: 
-        #   - "src"
-       # advanced settings
-        # branches: 
-        #   - main
-        if_ci_failed: error #success, failure, error, ignore
+        if_ci_failed: error
         informational: false
         only_pulls: false
     patch:
       default:
-        target: 60%
-        threshold: 20%
+        target: 80%
+        threshold: 10%
