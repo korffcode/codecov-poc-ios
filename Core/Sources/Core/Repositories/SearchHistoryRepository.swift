@@ -3,6 +3,7 @@ import Foundation
 public protocol SearchHistoryRepositoryProtocol {
     var queries: [String] { get }
     func save(_ query: String)
+    func superSave()
 }
 
 public class SearchHistoryRepository: SearchHistoryRepositoryProtocol {
@@ -16,5 +17,13 @@ public class SearchHistoryRepository: SearchHistoryRepositoryProtocol {
     
     public func save(_ query: String) {
         _queries.insert(query, at: 0)
+    }
+
+    public func superSave() {
+        _queries.insert("Super man!", at: 0)
+        _queries.insert("Super man!", at: 0)
+        _queries.insert("Super man!", at: 0)
+        _queries.insert("Super man!", at: 0)
+        _queries.insert("Super man!", at: 0)
     }
 }
