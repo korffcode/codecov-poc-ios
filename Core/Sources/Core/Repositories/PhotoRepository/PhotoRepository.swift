@@ -1,6 +1,7 @@
 public protocol PhotoRepositoryProtocol {
     func getPhotos(_ query: String) async throws -> [Photo]
     func getRecentPhotos() async throws -> [Photo]
+    func getSavedPhotos() async throws -> [Photo]
 }
 
 public class PhotoRepository: PhotoRepositoryProtocol {
@@ -16,5 +17,9 @@ public class PhotoRepository: PhotoRepositoryProtocol {
     
     public func getRecentPhotos() async throws -> [Photo] {
         return PhotoDtoToModelMapper.map(try await api.fetchRecentPhotos())
+    }
+
+    public func getSavedPhotos() async throws -> [Photo] {
+        return []
     }
 }

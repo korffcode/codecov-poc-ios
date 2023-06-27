@@ -1,15 +1,35 @@
+component_management:
+  default_rules:
+    statuses:
+      - type: project
+        target: auto
+  individual_components:
+    - component_id: module_core
+      name: Core
+      paths:
+        - "Core/**"
+      statuses:           # the core component has its own statuses
+        - type: project
+          target: 90%
+          threshold: 5%
+        - type: patch
+    - component_id: module_app
+      name: Main App
+      paths:
+        - "FlickrFindr/**"
 coverage:
   status:
-    patch:
-      default:
-        target: 80%
-        threshold: 10%
     project:
       default:
         # basic
         target: 80%
         threshold: 10%
-        if_ci_failed: error
+        if_ci_failed: error #success, failure, error, ignore
         informational: false
         only_pulls: false
-
+    patch:
+      default:
+        target: 80%
+        threshold: 10%
+comment:
+  layout: "header, diff, flags, components"
