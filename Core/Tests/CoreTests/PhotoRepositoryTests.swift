@@ -14,4 +14,10 @@ final class PhotoRepositoryTests: XCTestCase {
         XCTAssertFalse(photos.isEmpty)
         XCTAssertEqual(photos.first!.id, 52703925845)
     }
+
+    func testRepository_callNewFunction() async throws {
+        let photos = try await sut.getSavedPhotos()
+
+        XCTAssertNotNil(photos)
+    }
 }
