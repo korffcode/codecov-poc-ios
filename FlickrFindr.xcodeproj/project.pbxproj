@@ -17,6 +17,7 @@
 		153C22FE29A5148A008FFB32 /* PhotoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153C22FD29A5148A008FFB32 /* PhotoCard.swift */; };
 		E63F281A2A386FCB00F31A1E /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = E63F28192A386FCB00F31A1E /* Core */; };
 		E63F281C2A3870E000F31A1E /* MockPhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F281B2A3870E000F31A1E /* MockPhotoRepository.swift */; };
+		E681746B2A4B3DAA00B3FDE0 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = E681746A2A4B3DAA00B3FDE0 /* Nuke */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E63F281A2A386FCB00F31A1E /* Core in Frameworks */,
+				E681746B2A4B3DAA00B3FDE0 /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +153,7 @@
 			name = FlickrFindr;
 			packageProductDependencies = (
 				E63F28192A386FCB00F31A1E /* Core */,
+				E681746A2A4B3DAA00B3FDE0 /* Nuke */,
 			);
 			productName = FlickrFindr;
 			productReference = 153C22C629A4F383008FFB32 /* FlickrFindr.app */;
@@ -202,6 +205,9 @@
 				Base,
 			);
 			mainGroup = 153C22BD29A4F383008FFB32;
+			packageReferences = (
+				E68174692A4B3DAA00B3FDE0 /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
 			productRefGroup = 153C22C729A4F383008FFB32 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -508,10 +514,26 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		E68174692A4B3DAA00B3FDE0 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		E63F28192A386FCB00F31A1E /* Core */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Core;
+		};
+		E681746A2A4B3DAA00B3FDE0 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E68174692A4B3DAA00B3FDE0 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
